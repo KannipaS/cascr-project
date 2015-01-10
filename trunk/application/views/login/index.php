@@ -3,7 +3,7 @@
     <script>alert('<?= $message; ?>')</script>
 <? } else{ } ?>
 
-<? $this->session->sess_destroy(); $message = ''; ?>
+<? $this->session->unset_userdata(''); $message = ''; ?>
 
 <head>
 
