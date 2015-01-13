@@ -2,8 +2,7 @@
 
 class backend extends SecureController {
 
-    function __construct()
-    {
+    function __construct(){
         parent::__construct();
         $this->load->model('database');
     }
