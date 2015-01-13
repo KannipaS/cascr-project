@@ -18,13 +18,11 @@ class login extends MY_Controller {
 
         $check = $this->database->checklogin($user,$pass);
 
-        if($check != '')
-        {
+        if($check != '') {
             $this->session->set_userdata($check);
             redirect(site_url("backend/root_menu"));
         }
-        else
-        {
+        else {
             $this->session->set_userdata('error','Username , Password ผิด');
             redirect(site_url("login/index"));
 

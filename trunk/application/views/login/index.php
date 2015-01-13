@@ -3,7 +3,7 @@
     <script>alert('<?= $message; ?>')</script>
 <? } else{ } ?>
 
-<? $this->session->unset_userdata(''); $message = ''; ?>
+<? $this->session->unset_userdata('error'); $message = ''; ?>
 
 <head>
 
