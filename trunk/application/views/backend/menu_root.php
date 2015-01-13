@@ -4,6 +4,8 @@
     <title>########</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jQuery.js"></script>
+    <script src="js/ckeditor/ckeditor.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <style type="text/css">
         /* make sidebar nav vertical */
