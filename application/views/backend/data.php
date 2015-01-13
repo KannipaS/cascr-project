@@ -13,3 +13,8 @@
     Quisque nec ante arcu. Nullam aliquet et turpis nec pulvinar. Maecenas tellus velit, lobortis vitae laoreet eu, feugiat eu orci. Maecenas molestie malesuada nulla, id dignissim sem blandit at. Suspendisse hendrerit quis arcu ut malesuada. Nam porttitor magna et porttitor convallis. Curabitur gravida elementum lorem, in mattis turpis tristique tincidunt. Aliquam id neque euismod, consectetur diam sit amet, adipiscing felis. Phasellus sit amet sem elementum, elementum nisi non, aliquam ligula. Morbi in interdum mi, at pulvinar nunc.</p>
 <p>Praesent aliquet, sapien id pulvinar auctor, elit nisl imperdiet elit, id mattis felis lacus a neque. Fusce ullamcorper, urna vitae mollis tempus, sapien urna aliquam neque, sed dignissim nunc mauris sed nisi. Mauris malesuada congue mauris. Aenean vel justo tincidunt, euismod dolor ut, mattis purus. Vivamus eget adipiscing augue. Curabitur et neque faucibus nunc porta ultrices eu ut justo. Nam eu quam et urna consectetur convallis. Integer at fringilla erat, ut molestie nulla. Maecenas rutrum justo ut lectus gravida, vitae eleifend nulla ullamcorper. Sed consequat sit amet purus id congue. Integer condimentum, odio non pellentesque posuere, eros nisi porttitor nunc, ac laoreet nibh quam eu eros. Sed quis massa posuere, gravida erat non, varius turpis. Morbi venenatis vestibulum vulputate. Vestibulum arcu mauris, commodo commodo ligula nec, molestie blandit neque. Nulla imperdiet, massa nec placerat iaculis, odio lacus aliquam dui, eu vehicula velit dolor et augue.</p>
 
+<textarea name="editor1"></textarea>
+
+<script>
+    CKEDITOR.replace( 'editor1' );
+</script>
