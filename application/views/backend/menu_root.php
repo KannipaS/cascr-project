@@ -4,9 +4,14 @@
     <title>########</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="js/jQuery.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="js/ckeditor/ckeditor.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+
+
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" href="http://jqueryvalidation.org/files/demo/site-demos.css">
     <style type="text/css">
         /* make sidebar nav vertical */
         @media (min-width: 768px){
@@ -120,7 +125,6 @@
         }
 
     </style>
-    <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
 
 </head>
@@ -158,7 +162,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li class="active">
+                        <li>
                             <a data-toggle="collapse" data-target="#toggleDemo2" data-parent="#sidenav01" class="collapsed">
                                 <span class="glyphicon glyphicon-inbox"></span> Submenu 2 <small><span class="caret"></span></small>
                             </a>
@@ -170,7 +174,7 @@
                                 </ul>
                             </div>
                         </li>
-                        <li><a ><span class="glyphicon glyphicon-lock"></span> Normalmenu</a></li>
+                        <li><a href="index.php/backend/add_product" ><span class="glyphicon glyphicon-lock"></span> เพิ่มข้อมูล</a></li>
                         <li><a ><span class="glyphicon glyphicon-calendar"></span> WithBadges <!-- span class="badge pull-right">42</span --></a></li>
                         <li><a ><span class="glyphicon glyphicon-cog"></span> PreferencesMenu</a></li>
                     </ul>

@@ -1,8 +1,7 @@
 <?
 class database extends CI_Model{
 
-    function checklogin($user,$pass)
-    {
+    function checklogin($user,$pass){
         $sql = "select * from admin where ad_username = '$user' AND ad_password = '$pass'";
         $query = $this->db->query($sql);
         $row = $query->num_rows();
@@ -17,6 +16,13 @@ class database extends CI_Model{
         }
 
         return $data;
+    }
+
+    function get_category(){
+        $sql = "select * from category";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
     }
 
 }
