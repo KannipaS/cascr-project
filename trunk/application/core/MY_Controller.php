@@ -16,7 +16,7 @@ class SecureController extends MY_Controller {
 
     private function preConstruct(){
         if(!$this->session->userdata('ad_name')){
-            //$this->session->set_userdata('error','กรุณา Login ก่อน');
+            $this->session->set_userdata('error','กรุณาเข้าสู่ระบบก่อน');
             redirect(site_url("login/index"));
         }
     }

@@ -1,117 +1,24 @@
 <div class="row">
+
+    <? foreach($data as $pro){ ?>
     <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
+        <a href="#"><img src="upload/<?=$pro['pro_pic'];?>" alt=""></a>
+        <h3><a href="#"><?=$pro['pro_name']; ?></a></h3>
         <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            <?=$pro['pro_title']; ?>
         </p>
     </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
-    <div class="col-md-4 product-item">
-        <a href="#"><img src="http://placehold.it/700x400" alt=""></a>
-        <h3><a href="#">Project Name</a></h3>
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-        </p>
-    </div>
+    <? } ?>
+
 </div>
 
-<ul class="pagination">
-    <li><a href="#">Prev</a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-    <li><a href="#">Next</a></li>
-</ul>
+<? echo $this->pagination->create_links(); ?>
+<!--<ul class="pagination">-->
+<!--    <li><a href="#">Prev</a></li>-->
+<!--    <li><a href="#">1</a></li>-->
+<!--    <li><a href="#">2</a></li>-->
+<!--    <li><a href="#">3</a></li>-->
+<!--    <li><a href="#">4</a></li>-->
+<!--    <li><a href="#">5</a></li>-->
+<!--    <li><a href="#">Next</a></li>-->
+<!--</ul>-->
