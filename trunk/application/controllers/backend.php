@@ -27,12 +27,29 @@ class backend extends SecureController {
 
     public function input_data_add(){
         date_default_timezone_set("Asia/Bangkok");
+
+        $config['upload_path'] = './upload/';
+        $config['allowed_types'] = 'gif|jpg|png';
+        $config['file_name'] = $_SERVER['REQUEST_TIME'].rand().'-'.htmlspecialchars($this->input->post('pname'));
+
+        $this->load->library('upload', $config);
+
+        if (!$this->upload->do_upload('pimage')){		 // Can't upload
+            $name = "no_pic.jpg";
+        }
+        else{ 												// Can upload
+            $upload = array('upload_data' => $this->upload->data());
+            $name = 	$upload['upload_data']['file_name'];
+            //$part =		$_SERVER['DOCUMENT_ROOT']."/upload/";
+        }
+
         $data = array(
             'pro_name'      => htmlspecialchars($this->input->post('pname')),
             'pro_title'     => htmlspecialchars($this->input->post('pdetail')),
             'pro_detail'    => $this->input->post('editor1'),
             'pro_create'    => date("Y-m-d h:i:sa"),
             'pro_show'      => htmlspecialchars($this->input->post('show')),
+            'pro_pic'       => $name,
             'cat_id'        => htmlspecialchars($this->input->post('pcat'))
         );
         $check = $this->database->insert_product($data);
