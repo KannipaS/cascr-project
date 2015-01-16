@@ -35,7 +35,7 @@
         <ul>
             <li class="active"><a href="#" >HOME</a></li>
             <li><a href="#">ABOUT US</a></li>
-            <li><a href="#">PRODUCTS</a></li>
+            <li><a href="index.php/welcome/product">PRODUCTS</a></li>
             <li><a href="#">NEWS</a></li>
             <li><a href="#">ABOUT US</a></li>
         </ul>
@@ -77,28 +77,28 @@
                 <div class="col-r">
                     <img src="img/tab-most-viewed.png">
                     <ul class="col-r1">
-                        <li><i class="fa fa-cogs"></i><a href="#"><b>product_headline</b></a></li>
+                        <li><i class="fa fa-cogs"></i><a href="#"><b>KODERA</b></a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                     </ul>
                     <ul class="col-r1">
-                        <li><i class="fa fa-cogs"></i><a href="#"><b>product_headline</b></a></li>
+                        <li><i class="fa fa-cogs"></i><a href="#"><b>Ture Soltec</b></a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                     </ul>
                     <ul class="col-r1">
-                        <li><i class="fa fa-cogs"></i><a href="#"><b>product_headline</b></a></li>
+                        <li><i class="fa fa-cogs"></i><a href="#"><b>STAR TEC PACIFIC</b></a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                     </ul>
                     <ul class="col-r1">
-                        <li><i class="fa fa-cogs"></i><a href="#"><b>product_headline</b></a></li>
+                        <li><i class="fa fa-cogs"></i><a href="#"><b>KM DIGITECH</b></a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>
                         <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;product_sample</a></li>

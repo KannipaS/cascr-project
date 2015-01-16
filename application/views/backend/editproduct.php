@@ -13,7 +13,7 @@
 </style>
 
 <div class="page-header">
-    <h3><span class="glyphicon glyphicon-th-list"></span> เพิ่มสินค้าเข้าสู่ระบบ</h3>
+    <h3><span class="glyphicon glyphicon-th-list"></span> แก้ไขสินค้าในระบบ</h3>
 </div>
 
 <form action="index.php/backend/save_edit_data" class="form-horizontal" id="form" name="form" method="post" enctype="multipart/form-data">

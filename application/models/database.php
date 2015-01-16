@@ -16,6 +16,12 @@ class database extends CI_Model{
         return $data;
     }
 
+    function get_row(){
+        $query = $this->db->count_all('product');
+
+        return $query;
+    }
+
     function get_category(){
         $sql = "select * from category";
         $query = $this->db->query($sql);
@@ -58,6 +64,13 @@ class database extends CI_Model{
         $check = $this->db->affected_rows();
 
         return $check;
+    }
+    function get_all_product($per_pg,$offset){   //pagination
+        $this->db->order_by('pro_id','ase');
+        $this->db->where('pro_show', 1);
+        $query=$this->db->get('product',$per_pg,$offset);
+
+        return $query->result_array();
     }
 }
 
