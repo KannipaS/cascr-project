@@ -6,12 +6,10 @@ class database extends CI_Model{
         $query = $this->db->query($sql);
         $row = $query->num_rows();
 
-        if($row == 1)
-        {
+        if($row == 1) {
             $data = $query->row_array();
         }
-        else
-        {
+        else{
             $data = '';
         }
 
@@ -37,6 +35,29 @@ class database extends CI_Model{
         $query = $this->db->query($sql);
 
         return $query->result_array();
+    }
+
+    function delete_Pdata($id){
+        $this->db->where('pro_id', $id);
+        $this->db->delete('product');
+        $check = $this->db->affected_rows();
+
+        return $check;
+    }
+
+    function get_data_select($id){
+        $sql = "select * from product INNER JOIN category ON product.cat_id = category.cat_id where product.pro_id = $id";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
+    }
+
+    function update_data_select($id,$data){
+        $this->db->where('pro_id', $id);
+        $this->db->update('product', $data);
+        $check = $this->db->affected_rows();
+
+        return $check;
     }
 }
 
