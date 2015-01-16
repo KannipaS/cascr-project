@@ -25,6 +25,19 @@ class database extends CI_Model{
         return $query->result_array();
     }
 
+    function insert_product($data){
+        $this->db->insert('product',$data);
+        $check = $this->db->affected_rows();
+
+        return $check;
+    }
+
+    function get_Data_all(){
+        $sql = "select * from product INNER JOIN category ON product.cat_id = category.cat_id";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
+    }
 }
 
 ?>
