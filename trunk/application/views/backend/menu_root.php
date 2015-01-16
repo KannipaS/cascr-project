@@ -1,3 +1,10 @@
+<? if($this->session->userdata('error')){
+    $message = $this->session->userdata('error'); ?>
+    <script>alert('<?= $message; ?>')</script>
+<? } else{ } ?>
+
+<? $this->session->unset_userdata('error'); $message = ''; ?>
+
 <html lang="en"><head>
     <meta charset="utf-8">
     <base href="<?= base_url(); ?>"/>
@@ -8,9 +15,11 @@
     <script src="js/ckeditor/ckeditor.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="js/dataTable.js"></script>
 
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link href="css/dataTable.css" rel="stylesheet">
     <link rel="stylesheet" href="http://jqueryvalidation.org/files/demo/site-demos.css">
     <style type="text/css">
         /* make sidebar nav vertical */
@@ -175,7 +184,7 @@
                             </div>
                         </li>
                         <li><a href="index.php/backend/add_product" ><span class="glyphicon glyphicon-lock"></span> เพิ่มข้อมูล</a></li>
-                        <li><a ><span class="glyphicon glyphicon-calendar"></span> WithBadges <!-- span class="badge pull-right">42</span --></a></li>
+                        <li><a href="index.php/backend/get_Pdata" ><span class="glyphicon glyphicon-calendar"></span> ตรวจสอบสินค้า <!-- span class="badge pull-right">42</span --></a></li>
                         <li><a ><span class="glyphicon glyphicon-cog"></span> PreferencesMenu</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
