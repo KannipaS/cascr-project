@@ -1,28 +1,28 @@
 <style>
-.control-label{
-    margin-top: 5.5px;
-}
-.starred{
-    padding-left: 0px !important;
-    font-size: 50px !important;
-    color: red;
-}
-.red{
-    color: red;
-}
+    .control-label{
+        margin-top: 5.5px;
+    }
+    .starred{
+        padding-left: 0px !important;
+        font-size: 50px !important;
+        color: red;
+    }
+    .red{
+        color: red;
+    }
 </style>
 
 <div class="page-header">
     <h3><span class="glyphicon glyphicon-th-list"></span> เพิ่มสินค้าเข้าสู่ระบบ</h3>
 </div>
 
-<form action="index.php/backend/input_data_add" class="form-horizontal" id="form" name="form" method="post" enctype="multipart/form-data">
+<form action="index.php/backend/save_edit_data" class="form-horizontal" id="form" name="form" method="post" enctype="multipart/form-data">
 
-
+<? foreach($pro as $data){ ?>
     <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label" for="formGroupInputSmall">ชื่อสินค้า</label>
         <div class="col-sm-5">
-            <input class="form-control" type="text" name="pname" id="pname" placeholder="ชื่อสินค้า">
+            <input class="form-control" type="text" name="pname" id="pname" value="<?= $data['pro_name']; ?>" placeholder="ชื่อสินค้า">
         </div>
         <div class="col-sm-1 starred">
             <label>*</label>
@@ -32,10 +32,17 @@
     <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label" for="formGroupInputSmall">รายละเอียดย่อ</label>
         <div class="col-sm-5">
-            <input class="form-control" type="text" name="pdetail" id="pdetail" placeholder="รายละเอียดย่อ">
+            <input class="form-control" type="text" name="pdetail" id="pdetail" value="<?= $data['pro_title']; ?>"  placeholder="รายละเอียดย่อ">
         </div>
         <div class="col-sm-1 starred">
             <label>*</label>
+        </div>
+    </div>
+
+    <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">รูปภาพที่อยู่ในระบบ</label>
+        <div class="col-sm-5">
+            <img width="150" height="150" src="upload/<?= $data['pro_pic']; ?>"/>
         </div>
     </div>
 
@@ -52,7 +59,7 @@
     <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label" for="formGroupInputSmall">รายละเอียด</label>
         <div class="col-sm-9">
-            <textarea class="form-control" name="editor1" name="editor1"></textarea>
+            <textarea class="form-control" name="editor1" name="editor1"><?= $data['pro_detail']; ?>"</textarea>
         </div>
     </div>
 
@@ -60,8 +67,8 @@
         <label class="col-sm-2 control-label" for="formGroupInputSmall">แสดงผล</label>
         <div class="col-sm-5">
             <select name="show" id="show" class="form-control">
-                <option value="0">ไม่แสดงผล</option>
-                <option value="1" selected>แสดงผล</option>
+                <option <? if($data['pro_show'] == 0){ echo "selected"; } ?> value="0">ไม่แสดงผล</option>
+                <option <? if($data['pro_show'] == 1){ echo "selected"; } ?> value="1">แสดงผล</option>
             </select>
         </div>
     </div>
@@ -71,7 +78,7 @@
         <div class="col-sm-5">
             <select name="pcat" id="pcat" class="form-control">
                 <? foreach($cat as $category){ ?>
-                    <option value="<?= $category['cat_id']; ?>"><?= $category['cat_name']; ?></option>
+                    <option <? if($data['cat_id'] == $category['cat_id']){ echo "selected"; } ?> value="<?= $category['cat_id']; ?>"><?= $category['cat_name']; ?></option>
                 <? } ?>
             </select>
         </div>
@@ -85,6 +92,9 @@
         </div>
     </div>
 
+    <input type="hidden" id="id" name="id" value="<?= $data['pro_id']; ?>" />
+    <input type="hidden" id="oldpic" name="oldpic" value="<?= $data['pro_pic']; ?>" />
+<? } ?>
 
 </form>
 
@@ -103,6 +113,7 @@
             },
         });
     });
+
     function Cancel(){
         if(confirm('cancel')==true){
             window.location = 'index.php/backend/root_menu';
