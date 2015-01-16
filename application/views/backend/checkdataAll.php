@@ -14,8 +14,9 @@
         <th>รหัสสินค้า</th>
         <th>รุ่นสินค้า</th>
         <th>ชื่อสินค้า</th>
-        <th>แสดงผล</th>
         <th>กลุ่มสินค้า</th>
+        <th>แสดงผล</th>
+        <th>ภาพสินค้า</th>
         <th>แก้ไข</th>
         <th>ลบ</th>
     </tr>
@@ -29,10 +30,11 @@
             <td><?= $data['pro_id'] ?></td>
             <td><?= $data['pro_name']; ?></td>
             <td><?= $data['pro_title']; ?></td>
-            <td><?= $note[$data['pro_show']]; ?></td>
             <td><?= $data['cat_name']; ?></td>
+            <td><?= $note[$data['pro_show']]; ?></td>
+            <td><img border="3" width="120px" height="60px" src="upload/<?=$data['pro_pic'];?>"/></td>
             <td><a href=""><span class="glyphicon glyphicon-pencil"></span></a></td>
-            <td><a href=""><span class="glyphicon glyphicon-remove red "></span></a></td>
+            <td><a onclick="return confirm('ยืนยันการลบข้อมูล?');" href=""><span class="glyphicon glyphicon-remove red "></span></a></td>
         </tr>
     <? } ?>
     </tbody>

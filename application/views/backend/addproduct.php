@@ -16,7 +16,7 @@
     <h3><span class="glyphicon glyphicon-th-list"></span> เพิ่มสินค้าเข้าสู่ระบบ</h3>
 </div>
 
-<form class="form-horizontal" action="index.php/backend/input_data_add" id="form" name="form" method="POST">
+<form action="index.php/backend/input_data_add" class="form-horizontal" id="form" name="form" method="post" enctype="multipart/form-data">
 
 
     <div class="form-group form-group-sm">
@@ -38,6 +38,16 @@
             <label>*</label>
         </div>
     </div>
+
+    <div class="form-group form-group-sm">
+        <label class="col-sm-2 control-label" for="formGroupInputSmall">รูปภาพ</label>
+        <div class="col-sm-5">
+            <input type="file" class="form-control" id="pimage" name="pimage">
+        </div>
+    </div>
+
+
+
 
     <div class="form-group form-group-sm">
         <label class="col-sm-2 control-label" for="formGroupInputSmall">รายละเอียด</label>
