@@ -25,7 +25,49 @@
 <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script>
-    $('.carousel').carousel()
+    $('.carousel').carousel();
+
+    $(document).ready(function() {
+        var url = window.location;
+        var org = window.location.origin;
+        if(url == org+"/index.php/welcome/index"){
+            $("#link").addClass("active");
+            $("#link1").removeClass("active");
+            $("#link2").removeClass("active");
+            $("#link3").removeClass("active");
+            $("#link4").removeClass("active");
+        }else if(url == org+"/index.php/welcome/about_us"){
+            $("#link1").addClass("active");
+            $("#link").removeClass("active");
+            $("#link2").removeClass("active");
+            $("#link3").removeClass("active");
+            $("#link4").removeClass("active");
+        }else if(url == org+"/index.php/welcome/product"){
+            $("#link2").addClass("active");
+            $("#link1").removeClass("active");
+            $("#link").removeClass("active");
+            $("#link3").removeClass("active");
+            $("#link4").removeClass("active");
+        }else if(url == org+"/index.php/welcome/news"){
+            $("#link3").addClass("active");
+            $("#link").removeClass("active");
+            $("#link1").removeClass("active");
+            $("#link2").removeClass("active");
+            $("#link4").removeClass("active");
+        }else if(url == org+"/"){
+            $("#link").addClass("active");
+            $("#link1").removeClass("active");
+            $("#link2").removeClass("active");
+            $("#link3").removeClass("active");
+            $("#link4").removeClass("active");
+        }else{
+            $("#link2").addClass("active");
+            $("#link1").removeClass("active");
+            $("#link").removeClass("active");
+            $("#link3").removeClass("active");
+            $("#link4").removeClass("active");
+        }
+    });
 </script>
 </body>
 </html>

@@ -2,8 +2,8 @@
 
     <? foreach($data as $pro){ ?>
     <div class="col-md-4 product-item">
-        <a href="#"><img src="upload/<?=$pro['pro_pic'];?>" alt=""></a>
-        <h3><a href="#"><?=$pro['pro_name']; ?></a></h3>
+        <a href="index.php/welcome/select_data_detail/<?= $pro['pro_id']; ?>" ><img src="upload/<?=$pro['pro_pic'];?>" alt=""></a>
+        <h3><a href="index.php/welcome/select_data_detail/<?= $pro['pro_id']; ?>"><?=$pro['pro_name']; ?></a></h3>
         <p>
             <?=$pro['pro_title']; ?>
         </p>
