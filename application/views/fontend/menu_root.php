@@ -33,11 +33,12 @@
 <nav>
     <div id="mainNav">
         <ul>
-            <li class="active"><a href="#" >HOME</a></li>
-            <li><a href="#">ABOUT US</a></li>
-            <li><a href="index.php/welcome/product">PRODUCTS</a></li>
-            <li><a href="#">NEWS</a></li>
-            <li><a href="#">ABOUT US</a></li>
+<!--            <li class="active"><a href="#" >HOME</a></li>-->
+            <li id="link" ><a href="index.php/welcome/index" >HOME</a></li>
+            <li id="link1"><a href="index.php/welcome/about_us">ABOUT US</a></li>
+            <li id="link2"><a href="index.php/welcome/product">PRODUCTS</a></li>
+            <li id="link3"><a href="index.php/welcome/news">NEWS</a></li>
+            <li id="link4"><a href="#">ABOUT US</a></li>
         </ul>
     </div>
 </nav>

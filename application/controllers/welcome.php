@@ -40,9 +40,23 @@ class Welcome extends CI_Controller {
         $this->load->view('fontend/product',$data);
         $this->load->view('fontend/menu_root_footer');
     }
-    public function detail(){
+    public function select_data_detail(){
+        $id = $this->uri->segment(3);
+        $data['select'] = $this->database->get_data_select($id);
         $this->load->view('fontend/menu_root');
-        $this->load->view('fontend/products-detail.php');
+        $this->load->view('fontend/products-detail.php',$data);
+        $this->load->view('fontend/menu_root_footer');
+    }
+
+    public function about_us(){
+        $this->load->view('fontend/menu_root');
+        //$this->load->view('fontend/products-detail.php',$data);
+        $this->load->view('fontend/menu_root_footer');
+    }
+
+    public function news(){
+        $this->load->view('fontend/menu_root');
+        //$this->load->view('fontend/products-detail.php',$data);
         $this->load->view('fontend/menu_root_footer');
     }
 }

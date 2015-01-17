@@ -1,29 +1,14 @@
+<? foreach($select as $data){ ?>
 <div class="detail-item">
-    <h3><a href="#">Project Name</a></h3>
-    <img src="http://placehold.it/700x400" alt="">
+    <h3><a href="#"></a><?= $data['pro_name'];?></h3>
+    <img src="upload/<?= $data['pro_pic']; ?>" alt="">
     <p>
-        News for up-to-the-minute news, breaking news, video, audio and feature stories.
-        News for up-to-the-minute news, breaking news, video, audio and feature stories.
+        <?= $data['pro_title']; ?>
     </p>
 </div>
 <div class="detail-box">
     <ul>
-        <li><h4>Product details</h4></li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
-        <li>Product details : sample detail</li>
+        <?= $data['pro_detail']; ?>
     </ul>
 </div>
 <div class="detail-vdo">
@@ -31,3 +16,4 @@
     <div class="detail-vdo-box">
         <!-- put vdo in this -->
     </div>
+<? } ?>
