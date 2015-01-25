@@ -65,12 +65,50 @@ class database extends CI_Model{
 
         return $check;
     }
+
     function get_all_product($per_pg,$offset){   //pagination
         $this->db->order_by('pro_id','ase');
         $this->db->where('pro_show', 1);
         $query=$this->db->get('product',$per_pg,$offset);
 
         return $query->result_array();
+    }
+
+    function insert_news($data){
+        $this->db->insert('news',$data);
+        $check = $this->db->affected_rows();
+
+        return $check;
+    }
+
+    function get_data_news_all(){
+        $sql = "select * from news";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
+    }
+
+    function get_data_news($id){
+        $sql = "select * from news where news_id = $id";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
+    }
+
+    function update_data_news($id,$data){
+        $this->db->where('news_id', $id);
+        $this->db->update('news', $data);
+        $check = $this->db->affected_rows();
+
+        return $check;
+    }
+
+    function delete_news($id){
+        $this->db->where('news_id', $id);
+        $this->db->delete('news');
+        $check = $this->db->affected_rows();
+
+        return $check;
     }
 }
 
