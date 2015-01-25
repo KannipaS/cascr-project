@@ -126,5 +126,74 @@ class backend extends SecureController {
         }
         redirect(site_url("backend/root_menu"));
     }
+
+    public function add_news(){
+        $this->load->view('backend/menu_root');
+        $this->load->view('backend/add_news');
+        $this->load->view('backend/menu_root_down');
+    }
+
+    public function add_news_save(){
+        date_default_timezone_set("Asia/Bangkok");
+
+        $data = array(
+            'news_name'       => htmlspecialchars($this->input->post('pname')),
+            'news_detail'     => htmlspecialchars($this->input->post('editor1')),
+            'news_show'       => $this->input->post('show'),
+            'news_create'     => date("Y-m-d h:i:sa")
+        );
+
+        $check = $this->database->insert_news($data);
+        if($check == 1){
+            $this->session->set_userdata('error','แก้ไขข้อมูลสู่ระบบแล้วค่ะ');
+        }else{
+            $this->session->set_userdata('error','การทำรายการผิดผลาดกรุณาลองใหม่อีกครั้งค่ะ');
+        }
+        redirect(site_url("backend/root_menu"));
+    }
+
+    public function check_news_data(){
+        $data['pro'] = $this->database->get_data_news_all();
+        $this->load->view('backend/menu_root');
+        $this->load->view('backend/checkNews',$data);
+        $this->load->view('backend/menu_root_down');
+    }
+
+    public function edit_news(){
+        $id = $this->uri->segment(3);
+        $data['data'] = $this->database->get_data_news($id);
+        $this->load->view('backend/menu_root');
+        $this->load->view('backend/edit_news',$data);
+        $this->load->view('backend/menu_root_down');
+    }
+
+    public function edit_newssave(){
+        $id = $this->input->post('id');
+        $data = array(
+            'news_name'       => htmlspecialchars($this->input->post('pname')),
+            'news_detail'     => htmlspecialchars($this->input->post('editor1')),
+            'news_show'       => $this->input->post('show')
+        );
+
+        $check = $this->database->update_data_news($id,$data);
+        if($check == 1){
+            $this->session->set_userdata('error','แก้ไขข้อมูลสู่ระบบแล้วค่ะ');
+        }else{
+            $this->session->set_userdata('error','การทำรายการผิดผลาดกรุณาลองใหม่อีกครั้งค่ะ');
+        }
+        redirect(site_url("backend/root_menu"));
+    }
+
+    public function delete_data_news(){
+        $id = $this->uri->segment(3);
+        $check = $this->database->delete_news($id);
+        if($check == 1){
+            $this->session->set_userdata('error','ลบข้อมูลสู่ระบบแล้วค่ะ');
+        }else{
+            $this->session->set_userdata('error','การทำรายการผิดผลาดกรุณาลองใหม่อีกครั้งค่ะ');
+        }
+        redirect(site_url("backend/check_news_data"));
+    }
+
 }
 

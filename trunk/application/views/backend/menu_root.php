@@ -185,7 +185,8 @@
                         </li>
                         <li><a href="index.php/backend/add_product" ><span class="glyphicon glyphicon-lock"></span> เพิ่มข้อมูล</a></li>
                         <li><a href="index.php/backend/get_Pdata" ><span class="glyphicon glyphicon-calendar"></span> ตรวจสอบสินค้า <!-- span class="badge pull-right">42</span --></a></li>
-                        <li><a ><span class="glyphicon glyphicon-cog"></span> PreferencesMenu</a></li>
+                        <li><a href="index.php/backend/add_news"><span class="glyphicon glyphicon-cog"></span> เพิ่มข่าว</a></li>
+                        <li><a href="index.php/backend/check_news_data" ><span class="glyphicon glyphicon-cog"></span> จัดการข่าว</a></li>
                     </ul>
                 </div><!--/.nav-collapse -->
             </div>
