@@ -50,13 +50,19 @@ class Welcome extends CI_Controller {
 
     public function about_us(){
         $this->load->view('fontend/menu_root');
-        //$this->load->view('fontend/products-detail.php',$data);
+        $this->load->view('fontend/about_us');
         $this->load->view('fontend/menu_root_footer');
     }
 
     public function news(){
         $this->load->view('fontend/menu_root');
-        //$this->load->view('fontend/products-detail.php',$data);
+        $this->load->view('fontend/news');
+        $this->load->view('fontend/menu_root_footer');
+    }
+
+    public function contact(){
+        $this->load->view('fontend/menu_root');
+        $this->load->view('fontend/contacts');
         $this->load->view('fontend/menu_root_footer');
     }
 }
