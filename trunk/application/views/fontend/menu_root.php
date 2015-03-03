@@ -33,11 +33,11 @@
 <nav>
     <div id="mainNav">
         <ul>
-            <li class="active"><a href="index.php/welcome/index" >HOME</a></li>
-            <li><a href="index.php/welcome/about_us">ABOUT US</a></li>
-            <li><a href="index.php/welcome/product">PRODUCTS</a></li>
-            <li><a href="index.php/welcome/news">NEWS</a></li>
-            <li><a href="index.php/welcome/contact">CONTACT US</a></li>
+            <li id="link" ><a href="index.php/welcome/index" >HOME</a></li>
+            <li id="link1"><a href="index.php/welcome/about_us">ABOUT US</a></li>
+            <li id="link2"><a href="index.php/welcome/product">PRODUCTS</a></li>
+            <li id="link3"><a href="index.php/welcome/news">NEWS</a></li>
+            <li id="link4"><a href="index.php/welcome/contact">CONTACT US</a></li>
         </ul>
     </div>
 </nav>
@@ -78,31 +78,31 @@
                     <img src="img/tab-most-viewed.png">
                     <ul class="col-r1">
                         <a href="#"><img src="img/bar-ko.jpg"></a>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;CASTING</a></li>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;CASTUGNON</a></li>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;ACCESSORIES</a></li>
-                        <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;OTHER CATEGORIES</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=1">&nbsp;&nbsp;CASTING</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=2">&nbsp;&nbsp;CASTUGNON</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=3">&nbsp;&nbsp;ACCESSORIES</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="index.php/welcome/product/?sub=4">&nbsp;&nbsp;OTHER CATEGORIES</a></li>
                     </ul>
                     <ul class="col-r1">
                         <a href="#"><img src="img/bar-ts.jpg"></a>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;Crimp Force Monitor</a></li>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;crimp camera</a></li>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;tool monitor</a></li>
-                        <li><i class="fa fa-angle-double-right"></i><a href="#">&nbsp;&nbsp;OTHER CATEGORIES</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=5">&nbsp;Crimp Force Monitor</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=6">&nbsp;&nbsp;crimp camera</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=7">&nbsp;&nbsp;tool monitor</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="index.php/welcome/product/?sub=8">&nbsp;&nbsp;OTHER CATEGORIES</a></li>
                     </ul>
                     <ul class="col-r1">
                         <a href="#"><img src="img/bar-stp.jpg"></a>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;terminal</a></li>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;housing</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=9">&nbsp;&nbsp;terminal</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=10">&nbsp;&nbsp;housing</a></li>
                     </ul>
                     <ul class="col-r1">
                         <a href="#"><img src="img/bar-km.jpg"></a>
-                        <li><i class="fa fa-th-list"></i><a href="#">&nbsp;&nbsp;KM-3100</a></li>
+                        <li><i class="fa fa-th-list"></i><a href="index.php/welcome/product/?sub=11">&nbsp;&nbsp;KM-3100</a></li>
                     </ul>
                     <ul class="col-r1">
                         <a href="#"><img src="img/bar-ot.jpg"></a>
-                        <li><i class="fa fa-angle-double-right"></i><a href="#" style="font-size:14px; line-height:1;">&nbsp;&nbsp;CRIMPING, CUTTING & &nbsp;&nbsp;STRIPPING MACHINE</a></li>
-                        <li><i class="fa fa-angle-double-right"></i><a href="#">MCM COSMIC Machine</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="index.php/welcome/product/?sub=12" style="font-size:14px; line-height:1;">&nbsp;&nbsp;CRIMPING, CUTTING & &nbsp;&nbsp;STRIPPING MACHINE</a></li>
+                        <li><i class="fa fa-angle-double-right"></i><a href="index.php/welcome/product/?sub=13">MCM COSMIC Machine</a></li>
                     </ul><br><br>
                     <img src="img/tab-news.png">
                     <ul class="col-r2">

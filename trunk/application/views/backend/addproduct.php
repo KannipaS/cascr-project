@@ -76,6 +76,9 @@
             </select>
         </div>
     </div>
+
+    <div id="test"></div>
+
     <div class="form-group form-group-sm">
         <div class="col-sm-2 control-label">
             <button onclick="JavaScript:Cancel();" value="cancel" type="button" class="btn btn-danger">ยกเลิก</button>
@@ -101,6 +104,17 @@
                 pname:   "<p class='red'>กรุณากรอกชื่อสินค้า</p>",
                 pdetail: "<p class='red'>กรุณากรอกข้อมูลโดยย่อ</p>"
             },
+        })
+        var i = $("#pcat").val();
+        $.post( "index.php/backend/get_catagory", {name: i} ,function(data){
+            $("#test").html(data);
+        });
+
+        $("#pcat").change(function(){
+            var i = $("#pcat").val();
+            $.post( "index.php/backend/get_catagory", {name: i} ,function(data){
+                $("#test").html(data);
+            });
         });
     });
     function Cancel(){

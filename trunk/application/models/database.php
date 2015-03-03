@@ -16,10 +16,16 @@ class database extends CI_Model{
         return $data;
     }
 
-    function get_row(){
-        $query = $this->db->count_all('product');
+    function get_row($sub){
+        if($sub>0){
+            $sql = "select count(*)as rows from product where pro_show = 1 AND sub_id = $sub";
+        }
+        else{
+            $sql = "select count(*)as rows from product where pro_show = 1";
+        }
+        $query = $this->db->query($sql);
 
-        return $query;
+        return $query->row_array();
     }
 
     function get_category(){
@@ -66,10 +72,17 @@ class database extends CI_Model{
         return $check;
     }
 
-    function get_all_product($per_pg,$offset){   //pagination
+    function get_all_product($per_pg,$offset,$sub){   //pagination
         $this->db->order_by('pro_id','ase');
-        $this->db->where('pro_show', 1);
+        if($sub>0){
+            $this->db->where('pro_show', 1);
+            $this->db->where('sub_id', $sub);
+        }else{
+            $this->db->where('pro_show', 1);
+        }
         $query=$this->db->get('product',$per_pg,$offset);
+
+        //echo $this->db->last_query();
 
         return $query->result_array();
     }
@@ -109,6 +122,13 @@ class database extends CI_Model{
         $check = $this->db->affected_rows();
 
         return $check;
+    }
+
+    function get_subcatagory($id){
+        $sql = "select * from sub_category where cat_id = $id";
+        $query = $this->db->query($sql);
+
+        return $query->result_array();
     }
 }
 

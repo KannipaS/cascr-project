@@ -50,7 +50,8 @@ class backend extends SecureController {
             'pro_create'    => date("Y-m-d h:i:sa"),
             'pro_show'      => htmlspecialchars($this->input->post('show')),
             'pro_pic'       => $name,
-            'cat_id'        => htmlspecialchars($this->input->post('pcat'))
+            'cat_id'        => htmlspecialchars($this->input->post('pcat')),
+            'sub_id'        => htmlspecialchars($this->input->post('s_pcat'))
         );
         $check = $this->database->insert_product($data);
         if($check == 1){
@@ -116,7 +117,8 @@ class backend extends SecureController {
             'pro_detail'    => $this->input->post('editor1'),
             'pro_show'      => htmlspecialchars($this->input->post('show')),
             'pro_pic'       => $name,
-            'cat_id'        => htmlspecialchars($this->input->post('pcat'))
+            'cat_id'        => htmlspecialchars($this->input->post('pcat')),
+            'sub_id'        => htmlspecialchars($this->input->post('s_pcat'))
         );
         $check = $this->database->update_data_select($id,$data);
         if($check == 1){
@@ -193,6 +195,19 @@ class backend extends SecureController {
             $this->session->set_userdata('error','การทำรายการผิดผลาดกรุณาลองใหม่อีกครั้งค่ะ');
         }
         redirect(site_url("backend/check_news_data"));
+    }
+
+    public function get_catagory(){
+        $id = $this->input->post('name');
+        $data['s_cat'] = $this->database->get_subcatagory($id);
+        $this->load->view('backend/get_subcatagory',$data);
+    }
+
+    public function get_catagory_editpage(){
+        $id = $this->input->post('name');
+        $data['sub'] = $this->input->post('sub');
+        $data['s_cat'] = $this->database->get_subcatagory($id);
+        $this->load->view('backend/get_subcatagory',$data);
     }
 
 }

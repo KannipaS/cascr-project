@@ -11,13 +11,19 @@ class Welcome extends CI_Controller {
         $this->load->view('fontend/homepage');
         $this->load->view('fontend/menu_root_footer');
 	}
+
     public function product(){
         $per_pg = 12;    //  12 product : 1page
         $offset=$this->uri->segment(3);
-
+        $sub = $this->input->get('sub');
+        if($sub > 0){
+            $row = $this->database->get_row($sub);
+        }else{
+            $row = $this->database->get_row(0);
+        }
         $this->load->library('pagination');
         $config['base_url'] = base_url()."index.php/welcome/product/";
-        $config['total_rows'] = $this->database->get_row();
+        $config['total_rows'] = $row['rows'];
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
         $config['num_tag_open'] = '<li>';
@@ -32,10 +38,16 @@ class Welcome extends CI_Controller {
         $config['first_tagl_close'] = "</li>";
         $config['last_tag_open'] = "<li>";
         $config['last_tagl_close'] = "</li>";
+        $config['suffix'] = '?sub='.$sub; //
         $config['per_page'] = $per_pg;
+
         $this->pagination->initialize($config);
 
-        $data['data'] = $this->database->get_all_product($per_pg,$offset);
+        if($sub>0){
+            $data['data'] = $this->database->get_all_product($per_pg,$offset,$sub);
+        }else{
+            $data['data'] = $this->database->get_all_product($per_pg,$offset,0);
+        }
         $this->load->view('fontend/menu_root');
         $this->load->view('fontend/product',$data);
         $this->load->view('fontend/menu_root_footer');
