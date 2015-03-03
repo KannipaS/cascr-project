@@ -12,10 +12,11 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="js/ckeditor/ckeditor.js"></script>
+<!--    <script src="js/ckeditor/ckeditor.js"></script>-->
     <script src="http://jqueryvalidation.org/files/dist/jquery.validate.min.js"></script>
     <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
     <script src="js/dataTable.js"></script>
+    <script src="//cdn.ckeditor.com/4.4.7/full/ckeditor.js"></script>
 
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">

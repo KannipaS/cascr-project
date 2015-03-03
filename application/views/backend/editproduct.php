@@ -83,6 +83,9 @@
             </select>
         </div>
     </div>
+
+    <div id="test"></div>
+
     <div class="form-group form-group-sm">
         <div class="col-sm-2 control-label">
             <button onclick="JavaScript:Cancel();" value="cancel" type="button" class="btn btn-danger">ยกเลิก</button>
@@ -93,6 +96,8 @@
     </div>
 
     <input type="hidden" id="id" name="id" value="<?= $data['pro_id']; ?>" />
+    <input type="hidden" id="cat" name="cat" value="<?= $data['cat_id']; ?>" />
+    <input type="hidden" id="sub" name="sub" value="<?= $data['sub_id']; ?>" />
     <input type="hidden" id="oldpic" name="oldpic" value="<?= $data['pro_pic']; ?>" />
 <? } ?>
 
@@ -102,6 +107,7 @@
     CKEDITOR.replace( 'editor1' );
 
     $( document ).ready(function() {
+
         $("#form").validate({
             rules: {
                 pname:      "required",
@@ -111,6 +117,18 @@
                 pname:   "<p class='red'>กรุณากรอกชื่อสินค้า</p>",
                 pdetail: "<p class='red'>กรุณากรอกข้อมูลโดยย่อ</p>"
             },
+        });
+        var cat = $("#cat").val();
+        var sub = $("#sub").val();
+        $.post( "index.php/backend/get_catagory_editpage", {name: cat, sub:sub} ,function(data){
+            $("#test").html(data);
+        });
+
+        $("#pcat").change(function(){
+            var i = $("#pcat").val();
+            $.post( "index.php/backend/get_catagory", {name:i} ,function(data){
+                $("#test").html(data);
+            });
         });
     });
 
