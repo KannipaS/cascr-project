@@ -38,8 +38,9 @@ class Welcome extends CI_Controller {
         $config['first_tagl_close'] = "</li>";
         $config['last_tag_open'] = "<li>";
         $config['last_tagl_close'] = "</li>";
-        $config['suffix'] = '?sub='.$sub; //
+        $config['suffix'] = '?sub='.$sub; //  add paramiter to URL
         $config['per_page'] = $per_pg;
+        $config['first_url'] = $config['base_url'].$config['suffix']; // Fix bug $config['suffix'] previous page
 
         $this->pagination->initialize($config);
 
