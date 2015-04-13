@@ -13,7 +13,7 @@ class Welcome extends CI_Controller {
 	}
 
     public function product(){
-        $per_pg = 12;    //  12 product : 1page
+        $per_pg = 1;    //  12 product : 1page
         $offset=$this->uri->segment(3);
         $sub = $this->input->get('sub');
         if($sub > 0){
@@ -23,6 +23,7 @@ class Welcome extends CI_Controller {
         }
         $this->load->library('pagination');
         $config['base_url'] = base_url()."index.php/welcome/product/";
+        //$config['total_rows'] = $this->database->get_row()-1;   //$row['rows'];
         $config['total_rows'] = $row['rows'];
         $config['full_tag_open'] = "<ul class='pagination'>";
         $config['full_tag_close'] ="</ul>";
