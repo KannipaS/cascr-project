@@ -30,7 +30,6 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script>
     $('.carousel').carousel()
-
     $(document).ready(function() {
         var url = window.location;
         var org = window.location.origin;
@@ -78,7 +77,6 @@
             $("#link4").removeClass("active");
         }
     });
-
 </script>
 </body>
 </html>
