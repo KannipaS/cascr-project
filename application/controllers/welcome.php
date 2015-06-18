@@ -13,7 +13,7 @@ class Welcome extends CI_Controller {
 	}
 
     public function product(){
-        $per_pg = 1;    //  12 product : 1page
+        $per_pg = 12;    //  12 product : 1page
         $offset=$this->uri->segment(3);
         $sub = $this->input->get('sub');
         if($sub > 0){
