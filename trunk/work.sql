@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.2.10
+-- version 4.4.1.1
 -- http://www.phpmyadmin.net
 --
--- Host: localhost:8889
--- Generation Time: Jan 17, 2015 at 11:14 AM
--- Server version: 5.5.38
--- PHP Version: 5.6.2
+-- Host: localhost:3306
+-- Generation Time: Jun 18, 2015 at 04:22 PM
+-- Server version: 5.5.42
+-- PHP Version: 5.5.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `admin` (
-`ad_id` int(4) NOT NULL,
+  `ad_id` int(4) NOT NULL,
   `ad_username` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `ad_password` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
   `ad_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL
@@ -47,7 +47,7 @@ INSERT INTO `admin` (`ad_id`, `ad_username`, `ad_password`, `ad_name`) VALUES
 --
 
 CREATE TABLE `category` (
-`cat_id` int(5) NOT NULL,
+  `cat_id` int(5) NOT NULL,
   `cat_name` varchar(80) COLLATE utf8_unicode_ci NOT NULL
 ) ENGINE=InnoDB AUTO_INCREMENT=10006 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -65,11 +65,32 @@ INSERT INTO `category` (`cat_id`, `cat_name`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `news`
+--
+
+CREATE TABLE `news` (
+  `news_id` int(5) NOT NULL,
+  `news_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
+  `news_detail` text COLLATE utf8_unicode_ci NOT NULL,
+  `news_create` date NOT NULL,
+  `news_show` int(1) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `news`
+--
+
+INSERT INTO `news` (`news_id`, `news_name`, `news_detail`, `news_create`, `news_show`) VALUES
+(1, '1', '&lt;p&gt;1&lt;/p&gt;\n', '2015-05-29', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `product`
 --
 
 CREATE TABLE `product` (
-`pro_id` int(5) NOT NULL,
+  `pro_id` int(5) NOT NULL,
   `pro_name` varchar(100) COLLATE utf8_unicode_ci NOT NULL,
   `pro_title` text COLLATE utf8_unicode_ci NOT NULL,
   `pro_detail` text COLLATE utf8_unicode_ci NOT NULL,
@@ -99,19 +120,25 @@ INSERT INTO `product` (`pro_id`, `pro_name`, `pro_title`, `pro_detail`, `pro_cre
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
- ADD PRIMARY KEY (`ad_id`);
+  ADD PRIMARY KEY (`ad_id`);
 
 --
 -- Indexes for table `category`
 --
 ALTER TABLE `category`
- ADD PRIMARY KEY (`cat_id`);
+  ADD PRIMARY KEY (`cat_id`);
+
+--
+-- Indexes for table `news`
+--
+ALTER TABLE `news`
+  ADD PRIMARY KEY (`news_id`);
 
 --
 -- Indexes for table `product`
 --
 ALTER TABLE `product`
- ADD PRIMARY KEY (`pro_id`);
+  ADD PRIMARY KEY (`pro_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -121,17 +148,22 @@ ALTER TABLE `product`
 -- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
-MODIFY `ad_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+  MODIFY `ad_id` int(4) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `category`
 --
 ALTER TABLE `category`
-MODIFY `cat_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10006;
+  MODIFY `cat_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=10006;
+--
+-- AUTO_INCREMENT for table `news`
+--
+ALTER TABLE `news`
+  MODIFY `news_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-MODIFY `pro_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+  MODIFY `pro_id` int(5) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
